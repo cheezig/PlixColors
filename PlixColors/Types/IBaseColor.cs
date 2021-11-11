@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using JetBrains.Annotations;
+using UnityEngine;
 
 namespace PlixColors.Types
 {
@@ -8,7 +10,6 @@ namespace PlixColors.Types
         public Color Shadow { get; }
         public StringNames Name { get; }
         
-        public bool IsActive { get; }
-        public void Update(int id);
+        public Action<int> Update { get; }
     }
 }

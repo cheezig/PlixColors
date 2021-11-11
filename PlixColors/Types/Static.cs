@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace PlixColors.Types
 {
@@ -25,8 +26,6 @@ namespace PlixColors.Types
         public Color Body => _body;
         public Color Shadow => _shadow;
         public StringNames Name => _name;
-        public bool IsActive => false;
-        
-        public void Update(int id) { }
+        public Action<int> Update => null;
     }
 }

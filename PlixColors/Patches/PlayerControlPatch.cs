@@ -10,7 +10,7 @@ namespace PlixColors.Patches
         public static void Postfix(int colorId, Renderer rend)
         {
             var customColor = Manager.GetOrDefault(colorId);
-            if (customColor is { IsActive: true })
+            if (customColor is { Update: not null })
             {
                 PlayerColorComponent.Initialize(rend.gameObject, colorId);
                 return;

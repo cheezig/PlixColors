@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace PlixColors.Types
 {
@@ -13,7 +14,6 @@ namespace PlixColors.Types
         public Color Body => Color.HSVToRGB(_timer, _body.saturation, _body.value);
         public Color Shadow => Color.HSVToRGB(_timer, _shadow.saturation, _shadow.value);
         public StringNames Name { get; }
-        public bool IsActive => true;
         
         public Hue(float saturation, float value, float duration, StringNames name)
         {
@@ -34,12 +34,12 @@ namespace PlixColors.Types
             Duration = duration;
         }
 
-        public void Update(int id)
+        public Action<int> Update => id =>
         {
             _timer = (Time.deltaTime / Duration + _timer) % 1f;
-            
+
             Palette.PlayerColors[id] = Body;
             Palette.ShadowColors[id] = Shadow;
-        }
+        };
     }
 }

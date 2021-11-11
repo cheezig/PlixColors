@@ -30,7 +30,7 @@ namespace PlixColors.Components
             for (var i = 0; i < Palette.PlayerColors.Length; i++)
             {
                 var customColor = Manager.GetOrDefault(i);
-                if (customColor is null or { IsActive: false }) continue;
+                if (customColor is null or { Update: null }) continue;
                 
                 customColor.Update(i);
             }
