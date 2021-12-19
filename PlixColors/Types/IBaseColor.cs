@@ -1,5 +1,5 @@
-﻿using System;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
+using System;
 using UnityEngine;
 
 namespace PlixColors.Types
@@ -8,8 +8,8 @@ namespace PlixColors.Types
     {
         public Color Body { get; }
         public Color Shadow { get; }
-        public StringNames Name { get; }
-        
+        public string Name { get; }
+
         public Action<int> Update { get; }
     }
 }
