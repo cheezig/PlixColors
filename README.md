@@ -1,2 +1,2 @@
 # PlixColors
- adds colors to your among us
+ adds new colors to your among us, Every player in the lobby must be using BetterColorsPlus
